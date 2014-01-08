@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="preferExternal"
+    package="com.ajce.reminder"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> 
+
+    <application
+        android:icon="@drawable/rem"
+        android:label="@string/app_name"
+        android:name="App" >
+        <activity
+            android:label="Location Based Reminders"
+            android:name=".LocationBasedReminderActivity" >
+        </activity>
+        <activity
+            android:label="Add a Reminder"
+            android:name=".AddReminder"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:label="Active Reminders"
+            android:name=".ReminderList" >
+        </activity>
+        <activity
+            android:label="Review a reminder"
+            android:name=".Review"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity android:name=".Alert" >
+            <intent-filter >
+                <action android:name="PROX_ALERT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="First">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="Flash"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+             >
+        </activity>
+        <activity android:name="Checklist"
+            android:label="Checklist"
+            android:theme="@android:style/Theme.Light" >
+        </activity>
+    </application>
+
+</manifest>
